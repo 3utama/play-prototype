@@ -8,6 +8,7 @@ import anorm.SqlParser._
 import java.sql.Timestamp
 
 object UserService {
+  /**
 	private val * = {
 	  int("id") ~ str("name") ~ str("email") ~ str("password") ~
 	  date("createDate") map {
@@ -34,4 +35,5 @@ object UserService {
 	        .executeInsert()
 	  }
 	}
+	*/
 }

@@ -9,5 +9,7 @@ GET     /                           controllers.Application.index
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Add routes
-GET     /sample1                   controllers.SampleController1.sample1
+GET     /show                       controllers.TemplateController.show()
+GET     /user/entry                 controllers.UserController.entryInit
+POST    /user/entry                 controllers.UserController.entrySubmit
 
