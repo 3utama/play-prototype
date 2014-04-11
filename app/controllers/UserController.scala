@@ -11,14 +11,14 @@ object UserController extends Controller {
   /** Form定義 */
   val userForm = Form(
       mapping(
-          "name" -> text,
-          "email" -> text)(User.apply)(User.unapply))
+          "name" -> nonEmptyText,
+          "email" -> email)(User.apply)(User.unapply))
   /** initial screen function */
   def entryInit = Action {
     val filledForm = userForm.fill(User("user name", "email address"))
     Ok(views.html.user.entry(filledForm))
   }
- 
+
   /** function for registration user */
   def entrySubmit = Action { implicit request =>
     val user = userForm.bindFromRequest.get
@@ -26,6 +26,6 @@ object UserController extends Controller {
 
     Ok(views.html.user.entrySubmit())
   }
-  
+
 
 }
