@@ -21,10 +21,19 @@ object UserController extends Controller {
 
   /** function for registration user */
   def entrySubmit = Action { implicit request =>
-    val user = userForm.bindFromRequest.get
-    println(user)
-
-    Ok(views.html.user.entrySubmit())
+    userForm.bindFromRequest.fold(
+      errors => {
+        println("error")
+        BadRequest(views.html.user.entry(errors))
+      },
+      success => {
+        println("success")
+        val user = userForm.bindFromRequest.get
+        println("UserName:" + user.name)
+        println("MailAddress:" + user.email)
+        Ok(views.html.user.entrySubmit())
+      }
+    )
   }
 
 
