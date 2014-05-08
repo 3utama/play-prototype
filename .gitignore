@@ -17,4 +17,4 @@ dist
 .target/
 .ensime
 .ensime_lucene
-**/bin/
+bin/
