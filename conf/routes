@@ -12,4 +12,6 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 GET     /show                       controllers.TemplateController.show()
 GET     /user/entry                 controllers.UserController.entryInit
 POST    /user/entry                 controllers.UserController.entrySubmit
+GET     /user/entry                 controllers.UserController.entryInit
+POST    /user/entry                 controllers.UserController.entrySubmit
 
