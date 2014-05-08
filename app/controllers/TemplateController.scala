@@ -10,5 +10,4 @@ object TemplateController extends Controller {
     val list = List[String]("lemon", "mikan", "nanao")
     Ok(views.html.show("Hellow Scala Templates", list))
   }
-  
 }
