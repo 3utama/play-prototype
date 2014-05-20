@@ -9,6 +9,7 @@ object SampleController1 extends Controller {
 
   def sample1 = Action {
     Ok(views.html.index("Hellow Scala!"))
+    Ok(views.html.index("some body else!"))
   }
 
   DB.withConnection { implicit conn =>
